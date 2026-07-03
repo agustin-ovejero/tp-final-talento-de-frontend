@@ -1,5 +1,161 @@
+:root {
+    --bg: #282828;
+    --bg-soft: #3c3836;
+    --bg-dark: #1d2021;
+    --text: #ebdbb2;
+    --muted: #a89984;
+    --accent: #fe8019;
+    --accent-2: #b8bb26;
+    --border: #504945;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Montenegrin Gothic One", serif;
     font-weight: 400;
-    font-style: normal
-}  
+    font-style: normal;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg));
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+.header,
+.footer {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid var(--border);
+}
+
+.header {
+    padding: 1rem 2rem;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav__link {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    color: var(--accent);
+}
+
+.main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem 3rem;
+}
+
+.hero,
+.section,
+.contacto {
+    background-color: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero__title,
+.section__title {
+    color: var(--accent-2);
+    margin-bottom: 0.5rem;
+}
+
+.hero__text,
+.section__text,
+.contacto__text,
+.footer__text {
+    color: var(--text);
+}
+
+.hero__image {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+}
+
+.contacto__form {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.contacto__label {
+    color: var(--muted);
+}
+
+.contacto__input {
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.contacto__input:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+
+.contacto__button {
+    width: fit-content;
+    padding: 0.75rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.contacto__button:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    padding: 1.2rem 2rem;
+    text-align: center;
+}
+
+.nav--footer {
+    margin-top: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .header,
+    .footer,
+    .hero,
+    .section,
+    .contacto {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+    }
+}

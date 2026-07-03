@@ -1,70 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link href="script.js">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap" rel="stylesheet">
     <title>AgusE-commerce</title>
 </head>
-<body>
-    <head>
-        <nav>
-           <ul>
-            <li><a href="Inicio"></a>Inicio</li>
-            <li><a href="Nosotros">Nocotros</a></li>
-            <li><a href="Productos"></a>Productos</li>
-            <li><a href="Contacto"></a>Contacto</li>
-        </ul> 
+<body class="page">
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#inicio">Inicio</a></li>
+                <li class="nav__item"><a class="nav__link" href="#nosotros">Nosotros</a></li>
+                <li class="nav__item"><a class="nav__link" href="#productos">Productos</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contacto">Contacto</a></li>
+            </ul>
         </nav>
-    </head>
-    <main>
-        <section>
-            <h2>AgusE-commerce</h2>
-            <p>Todos tus productos de <strong>interes</strong> en un solo sitio</p>
-            <img>
-        </section>
-        
-        <section>
-            <h2>Nuestros productos</h2>
+    </header>
+
+    <main class="main">
+        <section class="hero" id="inicio">
+            <h2 class="hero__title">AgusE-commerce</h2>
+            <p class="hero__text">Todos tus productos de <strong>interés</strong> en un solo sitio</p>
+            <img class="hero__image" src="https://dummyimage.com/600x280/3c3836/fbf1c7&text=Agus+Ecommerce" alt="Productos destacados">
         </section>
 
+        <section class="section section--products" id="productos">
+            <h2 class="section__title">Nuestros productos</h2>
+            <p class="section__text">Descubrí una selección de artículos pensados para vos.</p>
+        </section>
 
-        <section class="contacto" id="Contacto" >
-            <p>Deseas mas <strong>información</strong> contactanos</p>
-            <form action="https://formspree.io/f/xpqgkdjd" method="POST">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre">
-                <br>
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="Apellido">
-                <br>
-                <label for="telefono">Telefono</label>
-                <input type="tel" name="telefono" id="telefono">
-                <br>
-                <label for="mail">Mail</label>
-                <input type="email" name="mail" id="mail">
-                <br>
-                <label for="nota">Nota</label>
-                <input type="text" name="nota" id="nota">
-                <br>
-                <input type="submit" value="Enviar">
+        <section class="contacto" id="contacto">
+            <p class="contacto__text">¿Deseas más <strong>información</strong>? Contáctanos</p>
+            <form class="contacto__form" action="https://formspree.io/f/xpqgkdjd" method="POST">
+                <label class="contacto__label" for="nombre">Nombre</label>
+                <input class="contacto__input" type="text" name="nombre" id="nombre">
+
+                <label class="contacto__label" for="apellido">Apellido</label>
+                <input class="contacto__input" type="text" name="apellido" id="apellido">
+
+                <label class="contacto__label" for="telefono">Teléfono</label>
+                <input class="contacto__input" type="tel" name="telefono" id="telefono">
+
+                <label class="contacto__label" for="mail">Mail</label>
+                <input class="contacto__input" type="email" name="mail" id="mail">
+
+                <label class="contacto__label" for="nota">Nota</label>
+                <input class="contacto__input" type="text" name="nota" id="nota">
+
+                <input class="contacto__button" type="submit" value="Enviar">
             </form>
         </section>
     </main>
-    <footer>
-        <p>Creado con amor por <strong>Agustin Ovejero</strong></p>
-        <div>
-            <nav>
-                <li><a href="Inicio"></a>Inicio</li>
-                <li><a href="Nosotros">Nocotros</a></li>
-                <li><a href="Productos"></a>Productos</li>
-                <li><a href="Contacto"></a>Contacto</li>
-            </nav>
-        </div>
+
+    <footer class="footer">
+        <p class="footer__text">Creado con amor por <strong>Agustin Ovejero</strong></p>
+        <nav class="nav nav--footer">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="#inicio">Inicio</a></li>
+                <li class="nav__item"><a class="nav__link" href="#productos">Productos</a></li>
+                <li class="nav__item"><a class="nav__link" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </footer>
 </body>
 </html>
