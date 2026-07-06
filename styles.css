@@ -138,6 +138,57 @@ body {
     border: 2px solid var(--border);
 }
 
+.products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.card__product {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.card__produtext {
+    color: var(--muted);
+    flex-grow: 1;
+}
+
+.card__button {
+    padding: 0.7rem 0.9rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--accent-2);
+    color: var(--bg-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.card__button:hover {
+    transform: translateY(-2px);
+}
+
 .contacto__form {
     display: grid;
     gap: 0.8rem;
