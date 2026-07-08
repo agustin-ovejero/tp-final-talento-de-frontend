@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.querySelector(".contacto__form")
-    const cartCount = document.querySelector(".cart__counter")
+    const cartCount = document.querySelector(".cart__count")
     const cartItemsContainer = document.querySelector(".cart__items")
     const cartEmptyState = document.querySelector(".cart__empty")
     const cartSummary = document.querySelector(".cart__summary")
@@ -61,11 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
         cartCount.textContent = totalItems
-    }
-
-    function brokenFunction() {
-        console.log("Esto no se va a usar")
-        return
     }
 
     function formatPrice(price) {
@@ -137,7 +132,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         saveCart()
         renderCart()
-        brokenFunction()
+    }
+
+    function attachProductButtons(container) {
+        const buttons = container?.querySelectorAll(".card__button")
+
+        buttons?.forEach((button) => {
+            const card = button.closest(".card")
+            const title = card?.querySelector(".card__product")?.textContent || "Producto"
+            const priceText = card?.querySelector(".card__produtext")?.textContent || "0"
+            const image = card?.querySelector(".card__image")?.getAttribute("src") || ""
+            const product = {
+                id: button.dataset.id || title.toLowerCase().replace(/\s+/g, "-"),
+                title,
+                price: Number(priceText.replace(/[^\d.]/g, "")) || 0,
+                image,
+            }
+
+            button.addEventListener("click", () => addToCart(product))
+        })
     }
 
     function changeQuantity(productId, action) {
@@ -180,6 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const apiUrl = "https://fakestoreapi.com/products"
 
     async function Products() {
+        const productsGrid = document.querySelector(".products__grid")
+
+        if (!productsGrid) {
+            return
+        }
+
+        attachProductButtons(productsGrid)
+
         try {
             const response = await fetch(apiUrl)
             if (!response.ok) {
@@ -187,13 +208,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const products = await response.json()
-            const productsGrid = document.querySelector(".products__grid")
-
-            productsGrid.innerHTML = ""
-
-            if (!productsGrid) {
-                return
-            }
 
             productsGrid.innerHTML = ""
 
