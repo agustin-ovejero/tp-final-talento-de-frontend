@@ -19,9 +19,9 @@
                 <li class="nav__item"><a class="nav__link" href="#contacto">Contacto</a></li>
             </ul>
         </nav>
-        <a class="cart" href="#productos" aria-label="Ver carrito de compras">
+        <a class="cart" href="#carrito" aria-label="Ver carrito de compras">
             <span class="cart__icon">🛒</span>
-            <span class="cart__count">0</span>
+            <span class="cart__count" aria-live="polite">0</span>
         </a>
     </header>
 
@@ -66,6 +66,14 @@
                     <button class="card__button">Añadir al Carrito</button>
                 </section>
             </div>
+        </section>
+
+        <section class="cart-section" id="carrito" aria-labelledby="carrito-title">
+            <h2 class="section__title" id="carrito-title">Tu carrito</h2>
+            <p class="section__text">Agregá productos y revisá tu compra en tiempo real.</p>
+            <div class="cart__empty">Tu carrito está vacío.</div>
+            <div class="cart__items"></div>
+            <div class="cart__summary"></div>
         </section>
 
         <section class="contacto" id="contacto">
